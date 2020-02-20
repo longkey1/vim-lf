@@ -57,7 +57,7 @@ function! s:LfChooserForNeoVim(dirname)
             endif
         endtry
     endfunction
-    let cmd = g:lf_executable . ' --choosefiles='.s:callback.tempname.' '.shellescape(a:dirname)
+    let cmd = g:lf_executable . ' -selection-path='.s:callback.tempname.' '.shellescape(a:dirname)
     call termopen(cmd, s:callback)
     startinsert
 endfunction
